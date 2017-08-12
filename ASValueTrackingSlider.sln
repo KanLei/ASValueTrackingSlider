@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASValueTrackingSlider", "ASValueTrackingSlider\ASValueTrackingSlider.csproj", "{4D0CD6A8-8DC4-4419-AFCA-A3274B55FB7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D0CD6A8-8DC4-4419-AFCA-A3274B55FB7F}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{4D0CD6A8-8DC4-4419-AFCA-A3274B55FB7F}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{4D0CD6A8-8DC4-4419-AFCA-A3274B55FB7F}.Release|iPhone.ActiveCfg = Release|iPhone
+		{4D0CD6A8-8DC4-4419-AFCA-A3274B55FB7F}.Release|iPhone.Build.0 = Release|iPhone
+		{4D0CD6A8-8DC4-4419-AFCA-A3274B55FB7F}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{4D0CD6A8-8DC4-4419-AFCA-A3274B55FB7F}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{4D0CD6A8-8DC4-4419-AFCA-A3274B55FB7F}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{4D0CD6A8-8DC4-4419-AFCA-A3274B55FB7F}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal
