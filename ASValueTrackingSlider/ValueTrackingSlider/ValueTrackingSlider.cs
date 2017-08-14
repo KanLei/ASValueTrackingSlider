@@ -57,9 +57,9 @@ namespace ASValueTrackingSlider.ValueTrackingSlider
 			}
 			set
 			{
-				if (AutoAdjustTrackColor == value) return;
+				if (autoAdjustTrackColor == value) return;
 
-				AutoAdjustTrackColor = value;
+				autoAdjustTrackColor = value;
 
 				// setMinimumTrackTintColor has been overridden to also set autoAdjustTrackColor to NO
 				// therefore super's implementation must be called to set minimumTrackTintColor
