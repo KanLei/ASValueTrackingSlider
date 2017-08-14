@@ -161,7 +161,7 @@ namespace ASValueTrackingSlider.ValueTrackingSlider
 			colorAnim.Values = cgColors.ToArray();
 			colorAnim.FillMode = CAFillMode.Both;
 			colorAnim.Duration = 1.0;
-			colorAnim.Delegate = new AnimationDelegate(this);
+            colorAnim.WeakDelegate = this;
 
 			// As the interpolated color values from the presentationLayer are needed immediately
 			// the animation must be allowed to start to initialize _colorAnimLayer's presentationLayer
@@ -377,27 +377,17 @@ namespace ASValueTrackingSlider.ValueTrackingSlider
 		}
 
 
+        // set the speed to zero to freeze the animation and set the offset to the correct value
+        // the animation can now be updated manually by explicity setting its 'timeOffset'
+        [Export("animationDidStart:")]
+        public void AnimationStarted(CAAnimation anim)
+        {
+            colorAnimLayer.Speed = 0.0f;
+            colorAnimLayer.TimeOffset = Delegate.CurrentValueOffset;
 
-		private class AnimationDelegate : CAAnimationDelegate
-		{
-			// TODO: weakreference
-			private readonly ValuePopUpView popUpView;
-			public AnimationDelegate(ValuePopUpView popUpView)
-			{
-				this.popUpView = popUpView;
-			}
-
-			// set the speed to zero to freeze the animation and set the offset to the correct value
-			// the animation can now be updated manually by explicity setting its 'timeOffset'
-			public override void AnimationStarted(CAAnimation anim)
-			{
-				popUpView.colorAnimLayer.Speed = 0.0f;
-				popUpView.colorAnimLayer.TimeOffset = popUpView.Delegate.CurrentValueOffset;
-
-				popUpView.pathLayer.FillColor = ((CAShapeLayer)popUpView.colorAnimLayer.PresentationLayer).FillColor;
-				popUpView.Delegate.ColorDidUpdate(popUpView.OpaqueColor);
-			}
-		}
+            pathLayer.FillColor = ((CAShapeLayer)colorAnimLayer.PresentationLayer).FillColor;
+            Delegate.ColorDidUpdate(OpaqueColor);
+        }
 	}
 }
 

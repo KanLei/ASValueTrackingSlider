@@ -109,7 +109,7 @@ namespace ASValueTrackingSlider.ValueTrackingSlider
 			set
 			{
 				popUpViewColor = value;
-				PopUpViewAnimatedColors = null; // animated colors should be discarded
+				popUpViewAnimatedColors = null; // animated colors should be discarded
 				PopUpView.Color = value;
 
 				if (AutoAdjustTrackColor)
@@ -175,7 +175,7 @@ namespace ASValueTrackingSlider.ValueTrackingSlider
 			}
 		}
 
-
+		// width padding factor of the popUpView, default is 1.15
 		public nfloat PopUpViewWidthPaddingFactor
 		{
 			get
@@ -188,7 +188,7 @@ namespace ASValueTrackingSlider.ValueTrackingSlider
 			}
 		}
 
-
+		// height padding factor of the popUpView, default is 1.1
 		public nfloat PopUpViewHeightPaddingFactor
 		{
 			get { return PopUpView.HeightPaddingFactor; }
@@ -291,7 +291,8 @@ namespace ASValueTrackingSlider.ValueTrackingSlider
 
 		public nfloat CurrentValueOffset => (Value - MinValue) / valueRange;
 
-		public void UpdatePopUpView()
+
+        private void UpdatePopUpView()
 		{
 			CGSize popUpViewSize;
 			string valueString = DataSource?.Slider(this, this.Value) ?? "";
@@ -324,7 +325,7 @@ namespace ASValueTrackingSlider.ValueTrackingSlider
 			PopUpView.SetFrame(popUpRect, offset, valueString);
 		}
 
-		public CGSize CalculatePopUpViewSize()
+        private CGSize CalculatePopUpViewSize()
 		{
 			// negative values need more width than positive values
 			var minStr = new NSString(NumberFormatter.StringFromNumber(NSNumber.FromFloat(MinValue)));
@@ -337,7 +338,7 @@ namespace ASValueTrackingSlider.ValueTrackingSlider
 
 		// takes an array of NSNumbers in the range self.minimumValue - self.maximumValue
 		// returns an array of NSNumbers in the range 0.0 - 1.0
-		public NSNumber[] KeyTimesFromSliderPositions(NSNumber[] positions)
+        private NSNumber[] KeyTimesFromSliderPositions(NSNumber[] positions)
 		{
 			if (positions == null) return null;
 
@@ -351,18 +352,18 @@ namespace ASValueTrackingSlider.ValueTrackingSlider
 			return temp.ToArray();
 		}
 
-		public CGRect ThumbRect()
+        private CGRect ThumbRect()
 		{
 			return ThumbRectForBounds(this.Bounds, this.TrackRectForBounds(this.Bounds), this.Value);
 		}
 
-		public void ShowPopUpViewAnimated(bool animated)
+        private void ShowPopUpViewAnimated(bool animated)
 		{
 			Delegate?.SliderWillDisplayPopUpView(this);
 			PopUpView.ShowAnimated(animated);
 		}
 
-		public void HidePopUpViewAnimated(bool animated)
+        private void HidePopUpViewAnimated(bool animated)
 		{
 			Delegate?.SliderWillHidePopUpView(this);
 			PopUpView.HideAnimated(animated, () =>

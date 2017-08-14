@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ValueTrackingSliderViewController">
+            <connections>
+                <outlet property="Slider1" destination="BZs-vW-Qw6" id="sRp-DL-2XU"/>
+                <outlet property="Slider2" destination="CDC-1Z-BRN" id="VET-qr-Kpi"/>
+                <outlet property="Slider3" destination="5ZS-IL-7bE" id="yRi-Hg-M8E"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BZs-vW-Qw6" customClass="ValueTrackingSlider">
+                    <rect key="frame" x="100" y="200" width="118" height="0.0"/>
+                </slider>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CDC-1Z-BRN" customClass="ValueTrackingSlider">
+                    <rect key="frame" x="101" y="300" width="118" height="0.0"/>
+                </slider>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5ZS-IL-7bE" customClass="ValueTrackingSlider">
+                    <rect key="frame" x="83" y="460" width="118" height="0.0"/>
+                </slider>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BZs-vW-Qw6" firstAttribute="top" secondItem="2" secondAttribute="top" constant="200" id="2Z8-nK-bUh"/>
+                <constraint firstItem="5ZS-IL-7bE" firstAttribute="top" secondItem="CDC-1Z-BRN" secondAttribute="bottom" constant="100" id="AnU-Lq-XyH"/>
+                <constraint firstItem="5ZS-IL-7bE" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="EXa-sG-ELL"/>
+                <constraint firstItem="CDC-1Z-BRN" firstAttribute="top" secondItem="BZs-vW-Qw6" secondAttribute="bottom" constant="100" id="QRq-Sn-IL6"/>
+                <constraint firstItem="CDC-1Z-BRN" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="U1r-KD-eaN"/>
+                <constraint firstAttribute="trailing" secondItem="BZs-vW-Qw6" secondAttribute="trailing" id="ojF-Ye-XGU"/>
+                <constraint firstAttribute="trailing" secondItem="CDC-1Z-BRN" secondAttribute="trailing" id="rHw-2L-2hC"/>
+                <constraint firstAttribute="trailing" secondItem="5ZS-IL-7bE" secondAttribute="trailing" id="sC4-2G-c77"/>
+                <constraint firstItem="BZs-vW-Qw6" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="yyZ-Pj-C7g"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
