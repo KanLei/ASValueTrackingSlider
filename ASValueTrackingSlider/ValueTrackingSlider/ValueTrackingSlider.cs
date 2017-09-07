@@ -379,7 +379,11 @@ namespace ASValueTrackingSlider.ValueTrackingSlider
 		{
 			base.LayoutSubviews();
 
-			UpdatePopUpView();
+            // update when touch
+            if(this.TouchInside)
+            {
+				UpdatePopUpView();
+            }
 		}
 
 		public override void MovedToWindow()
